@@ -53,8 +53,6 @@ public class CustomerController {
                 return true;
 
             }
-
-
         }
         return false;
 
