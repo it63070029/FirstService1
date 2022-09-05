@@ -39,6 +39,7 @@ public class CustomerController {
         for (Customer item:customers){
             if(item.getName().equals(n)){
                 return item;
+
             }
         }
         return null;
@@ -69,15 +70,17 @@ public class CustomerController {
         return false;
 
     }
-     @RequestMapping(value = "/addCustomer",method = RequestMethod.POST)
-    public boolean addCustomer(@RequestParam("ID") String ID, @RequestParam("name") String n,@RequestParam("sex") String s,@RequestParam("age") int a){
+     @RequestMapping(value = "/addCustomer",method = RequestMethod.GET)
+    public boolean addCustomer(@RequestParam("ID") String ID, @RequestParam("name") String n,
+                               @RequestParam("sex") String s,@RequestParam("age") int a){
         customers.add(new Customer(ID,n,s,a));
         return true;
 
 
     }
-    @RequestMapping(value = "/addCustomer1",method = RequestMethod.GET)
-    public boolean addCustomer(@RequestParam("ID") String ID, @RequestParam("name") String n,@RequestParam("sex") String s,@RequestParam("age") int a){
+    @RequestMapping(value = "/addCustomer1",method = RequestMethod.POST)
+    public boolean addCustomer1(@RequestParam("ID") String ID, @RequestParam("name") String n,
+                               @RequestParam("sex") String s,@RequestParam("age") int a){
         customers.add(new Customer(ID,n,s,a));
         return true;
     }
